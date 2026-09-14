@@ -29,9 +29,14 @@ dialog{position:absolute;inset:136px 64px 108px auto;margin:0;width:880px;height
 @media(max-width:700px) and (orientation:portrait){.slide-head{flex-direction:column-reverse;gap:12px}.slide-head>.sample{position:static;align-self:flex-end;margin:0}.title-line h2{min-width:0;font-size:27px}dialog{position:fixed;inset:155px 14px 102px;width:auto;max-height:none;height:auto;z-index:20;border-radius:8px}.dialog-content{overflow-wrap:anywhere}.dialog-head{padding:16px 20px}.dialog-head h2{font-size:20px}.dialog-content th:first-child{width:25%}}
 
 
-.cover-layout{display:flex;flex-direction:column;align-items:center;justify-content:center;gap:0;text-align:center}
+.cover{position:relative}
+.cover-layout{display:flex;flex-direction:column;align-items:center;justify-content:center;gap:0;text-align:center;padding-bottom:60px}
+.cover .cover-meta{position:absolute;right:0;bottom:24px;display:flex;flex-direction:column;gap:10px;text-align:left}
+.cover .cover-meta>div{display:grid;grid-template-columns:82px auto;align-items:center;gap:20px;line-height:1.5}
+.cover .cover-meta span{font-size:16px;margin:0}
+.cover .cover-meta strong{font-size:21px;font-weight:500}
 .cover h1{font-size:72px;line-height:1.65;letter-spacing:2px;font-weight:650;white-space:nowrap}
-@media(max-width:700px) and (orientation:portrait){.cover h1{font-size:clamp(14px,4.4vw,30px);line-height:1.75;letter-spacing:0}.cover-layout{padding:40px 0}}
+@media(max-width:700px) and (orientation:portrait){.cover h1{font-size:clamp(14px,4.4vw,30px);line-height:1.75;letter-spacing:0}.cover-layout{padding:40px 0 125px}.cover .cover-meta{right:0;bottom:20px;gap:8px}.cover .cover-meta>div{grid-template-columns:62px auto;gap:14px}.cover .cover-meta span{font-size:12px}.cover .cover-meta strong{font-size:16px}}
 </style>
 </head>
 <body>
