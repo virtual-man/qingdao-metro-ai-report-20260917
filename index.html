@@ -29,7 +29,7 @@ dialog{position:absolute;inset:136px 64px 108px auto;margin:0;width:880px;height
 @media(max-width:700px) and (orientation:portrait){.slide-head{flex-direction:column-reverse;gap:12px}.slide-head>.sample{position:static;align-self:flex-end;margin:0}.title-line h2{min-width:0;font-size:27px}dialog{position:fixed;inset:155px 14px 102px;width:auto;max-height:none;height:auto;z-index:20;border-radius:8px}.dialog-content{overflow-wrap:anywhere}.dialog-head{padding:16px 20px}.dialog-head h2{font-size:20px}.dialog-content th:first-child{width:25%}}
 
 
-.cover-layout{display:flex;align-items:center;justify-content:center;gap:0;text-align:center}
+.cover-layout{display:flex;flex-direction:column;align-items:center;justify-content:center;gap:0;text-align:center}
 .cover h1{font-size:72px;line-height:1.65;letter-spacing:2px;font-weight:650}
 .cover-heading-line{display:block}
 @media(max-width:700px) and (orientation:portrait){.cover h1{font-size:32px;line-height:1.75;letter-spacing:0}.cover-layout{padding:40px 0}}
@@ -53,6 +53,8 @@ dialog{position:absolute;inset:136px 64px 108px auto;margin:0;width:880px;height
   <section class="slide cover active" data-title="汇报主题" aria-labelledby="title-0">
    <div class="cover-layout">
     <h1 id="title-0"><span class="cover-heading-line">青岛地铁“人工智能+”</span><span class="cover-heading-line">创新发展情况汇报</span></h1>
+    <p class="cover-sub">以业务场景为牵引<br>探索人工智能与轨道交通深度融合</p>
+    <div class="cover-meta"><div><span>汇报单位</span><strong>青岛地铁</strong></div><div><span>汇报日期</span><strong>2026 年 9 月 17 日</strong></div></div>
    </div>
   </section>
   <section class="slide" data-title="能力架构" aria-labelledby="title-1" hidden inert>
