@@ -1182,6 +1182,26 @@ button:focus-visible{outline:3px solid #559a77;outline-offset:4px}
 .combined-foundation-panel,.agent-embodied-panel{container-type:inline-size}
 .slide:is(.combined-foundation,.agent-embodied-slide) .measure-heading-inline{white-space:nowrap;text-wrap:nowrap;letter-spacing:0;font-size:clamp(11px,4.8cqi,25px);line-height:1.4}
 
+/* User-supplied explanations sit directly beneath the two measure headings. */
+.combined-foundation .foundation-insight,.agent-embodied-panel .agent-insight{margin:0;color:#42634f;font-size:20px;line-height:1.55}
+@media(min-width:701px),(orientation:landscape){
+ .combined-foundation .foundation-insight,.agent-embodied-panel .agent-insight{min-height:62px}
+ .combined-foundation .combined-foundation-data .combined-foundation-summary{white-space:nowrap;text-wrap:nowrap;font-size:clamp(16px,2.6cqi,18px)!important;letter-spacing:0;line-height:1.55}
+ .combined-foundation .model-with-launch{gap:6px}
+ .combined-foundation .model-with-launch .combined-foundation-timeline{padding-top:12px}
+ .combined-foundation .model-with-launch .combined-foundation-timeline>div{padding-top:4px}
+ .combined-foundation .model-with-launch .combined-foundation-dot{top:-11px}
+ .combined-foundation .model-with-launch .combined-foundation-method{padding:6px 12px}
+ .combined-foundation .model-launch-video{height:150px}
+ .combined-foundation .model-with-launch .model-award-evidence button{height:128px}
+ .agent-embodied-panel{gap:9px}
+ .agent-embodied-system{padding:9px 19px}
+ .agent-embodied-participation{padding:6px 3px}
+}
+@media(max-width:700px) and (orientation:portrait){
+ .combined-foundation .foundation-insight,.agent-embodied-panel .agent-insight{font-size:18px;line-height:1.7}
+}
+
 /* Industry: a single architecture diagram with a separate, subordinate results rail. */
 .industry-redesigned-slide .slide-head{margin-bottom:18px}
 .industry-layout-grid{display:grid;grid-template-columns:minmax(0,1fr) 354px;gap:24px;flex:1;min-height:0}
@@ -1315,6 +1335,7 @@ button:focus-visible{outline:3px solid #559a77;outline-offset:4px}
  <div class="combined-foundation-grid">
   <article class="combined-foundation-panel combined-foundation-data">
    <h3 class="measure-heading-inline">以数据治理为基础，夯实人工智能发展底座</h3>
+   <p class="foundation-insight">数据本身不产生智能，模型是能力核心，需要通过模型训练释放数据价值</p>
    <p class="combined-foundation-summary">构建全生命周期（理、采、存、管、用）数据治理体系，建立30项数据标准。</p>
    <div class="combined-foundation-metrics">
     <div><span>建立数据标准</span><strong>30<small>项</small></strong></div>
@@ -1332,6 +1353,7 @@ button:focus-visible{outline:3px solid #559a77;outline-offset:4px}
   </article>
   <article class="combined-foundation-panel combined-foundation-model model-with-launch">
    <h3 class="measure-heading-inline">以模型研发为核心，提升人工智能能力水平</h3>
+   <p class="foundation-insight">大模型仅能作为大脑实现思考、问答、分析，还需要借助智能体参与到业务流程中执行任务</p>
    <p class="combined-foundation-summary">在国产通识大模型基础上<br>持续迭代城轨垂域模型。</p>
    <div class="combined-foundation-timeline" aria-label="2025年4月首发城轨行业大模型，已完成5轮版本优化，目前正在迭代2.0版本">
     <div><span class="combined-foundation-dot" aria-hidden="true"></span><strong>2025.04</strong><p>首发城轨行业大模型</p></div>
@@ -1349,6 +1371,7 @@ button:focus-visible{outline:3px solid #559a77;outline-offset:4px}
  <div class="agent-embodied-columns">
   <div class="agent-embodied-panel agent-embodied-agents panel" aria-label="智能体应用">
    <h3 class="measure-heading-inline agent-embodied-title">以智能体应用为抓手，推动人工智能落地应用</h3>
+   <p class="agent-insight">大模型仅能作为大脑实现思考、问答、分析，还需要借助智能体参与到业务流程中执行任务</p>
    <div class="agent-embodied-system"><strong>1+26</strong><div><b>智能体集群应用体系</b><span>赋能建造、运行、运维、企管核心业务</span></div></div>
    <div class="agent-embodied-stats"><article><span>规划智能体</span><strong>500<small>余个</small></strong></article><article><span>批量研发阶段</span><strong>400<small>余个</small></strong></article><article><span>已投用智能体</span><strong>80<small>余个</small></strong></article></div>
    <div class="agent-embodied-participation"><div><span>“伴随式”FDE研发团队</span><strong>超400<small>名员工深度参与</small></strong></div><div><span>一线员工已动手研发</span><strong>160<small>余个智能应用</small></strong></div></div>
@@ -1356,6 +1379,7 @@ button:focus-visible{outline:3px solid #559a77;outline-offset:4px}
   </div>
   <div class="agent-embodied-panel agent-embodied-robots panel" aria-label="具身智能">
    <h3 class="measure-heading-inline agent-embodied-title">以具身智能为延伸，拓展人工智能应用边界</h3>
+   <p class="agent-insight">为了让AI真正“能干活”，还需要给大模型和智能体装上“手”和“脚”</p>
    <div class="agent-embodied-stats"><article><span>巡检、客服等场景</span><strong>14<small>类</small></strong></article><article><span>具身智能联创体</span><strong>15<small>家单位</small></strong></article><article><span>已投用机器人产品</span><strong>3<small>款</small></strong></article></div>
    <div class="agent-embodied-robot-scope"><span>车辆、设备房、轨行区3类设施设备巡检</span><span>联合山大、国华、云深处等15家单位；筹建“1+1+1”实景实训场</span></div>
    <div class="agent-embodied-robot-work"><div class="agent-embodied-robot-heading"><h4>车辆巡检机器人</h4><span>开展自主巡检、实时回传结果</span></div><div class="agent-embodied-flow"><article><strong>感知</strong></article><i>→</i><article><strong>研判</strong></article><i>→</i><article><strong>处置</strong></article></div><div class="agent-embodied-results"><div><span>故障识别准确率</span><strong>超95<small>%</small></strong></div><div><span>设备故障率降低</span><strong>约30<small>%</small></strong></div></div></div>
