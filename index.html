@@ -1161,6 +1161,22 @@ button:focus-visible{outline:3px solid #559a77;outline-offset:4px}
   .experience-summary .principles-grid p { font-size:20px; line-height:1.6; text-wrap:balance; }
 }
 
+/* Keep the supplied scenario paragraph visible alongside its existing diagram. */
+.scenario-source-copy{flex:none;padding:15px 24px;background:#f8fcfae8;border:1px solid #c4dbce;border-left:4px solid #73b08e;border-radius:14px;color:#305b46;font-size:22px;line-height:1.65;text-align:justify}
+@media(min-width:701px),(orientation:landscape){
+ .scenario-source-slide .measure-canvas{gap:12px}
+ .scenario-source-slide .measure-scenario-flow{min-height:165px}
+ .scenario-source-slide .measure-flow>article{padding:16px 24px;gap:8px}
+ .scenario-source-slide .measure-filter{padding:12px 27px}
+ .scenario-source-slide .measure-research>div{display:grid;grid-template-columns:94px minmax(0,1fr);column-gap:16px;padding:16px 24px}
+ .scenario-source-slide .measure-research span{grid-column:1;grid-row:1 / 3;align-self:center;margin:0;font-size:18px}
+ .scenario-source-slide .measure-research strong{grid-column:2;font-size:25px;line-height:1.4}
+ .scenario-source-slide .measure-research p{grid-column:2;margin-top:4px;font-size:18px;line-height:1.5}
+}
+@media(max-width:700px) and (orientation:portrait){
+ .scenario-source-copy{padding:17px 18px;font-size:18px;line-height:1.85;text-align:left}
+}
+
 /* Four equal-level measure titles remain on a single line. */
 .combined-foundation-panel,.agent-embodied-panel{container-type:inline-size}
 .slide:is(.combined-foundation,.agent-embodied-slide) .measure-heading-inline{white-space:nowrap;text-wrap:nowrap;letter-spacing:0;font-size:clamp(11px,4.8cqi,25px);line-height:1.4}
@@ -1281,9 +1297,10 @@ button:focus-visible{outline:3px solid #559a77;outline-offset:4px}
  <div class="overview-products"><span>形成一批具备竞争力的产品</span><div><b>高质量数据集</b><b>大模型</b><b>智能体</b><b>具身智能装备</b></div></div>
  <div class="overview-cooperation"><article><h3>城轨人工智能共研体</h3><div><strong>39<small>家地铁业主</small></strong><strong>60<small>余家校企单位</small></strong></div><p>面向行业开源自研大模型<br>编发《城市轨道交通人工智能应用指南》</p></article><article><h3>青岛市场景创新联盟</h3><div><strong>134<small>家企业</small></strong><strong>350<small>项AI场景清单</small></strong></div><p>全面带动地方AI产业发展</p></article></div>
 </section>
-<section class="slide ai-measure-slide" data-title="高价值场景牵引" data-chapter="2" data-section="工作举措" aria-labelledby="title-6" hidden inert>
- <div class="slide-head"><div><div class="title-line"><span class="chapter">二</span><h2 id="title-6">以高价值场景为牵引，开展人工智能技术适配。</h2></div><p class="lead">坚持“产业出题、科技答题”，立足一线真实需求。</p></div><span class="sample">工作举措 · 1 / 3</span></div>
+<section class="slide ai-measure-slide scenario-source-slide" data-title="高价值场景牵引" data-chapter="2" data-section="工作举措" aria-labelledby="title-6" hidden inert>
+ <div class="slide-head"><div><div class="title-line"><span class="chapter">二</span><h2 id="title-6">以高价值场景为牵引，开展人工智能技术适配。</h2></div><p class="lead">场景是连接技术和产业、打通研发和市场的桥梁。</p></div><span class="sample">工作举措 · 1 / 3</span></div>
  <div class="measure-canvas measure-scenario">
+  <p class="scenario-source-copy">坚持“产业出题、科技答题”，立足一线真实需求，发动全员梳理核心业务场景1700余项（乘客服务、调度指挥、车辆检修、设备故障处置等），从使用频次、用户数量、安全增效等维度筛选高价值场景优先落地，把场景资源优势转化为创新发展优势。</p>
   <div class="measure-flow measure-scenario-flow" aria-label="通过举办场景大赛等方式，发动全员梳理核心业务场景，从使用频次、用户数量、安全增效等维度筛选高价值场景优先落地">
    <article><span class="measure-kicker">发动全员</span><h3>“场景大赛”</h3><p>等方式梳理核心业务场景</p></article><i aria-hidden="true">→</i>
    <article class="measure-highlight"><span class="measure-kicker">核心业务场景</span><strong class="measure-value">1700<small>余项</small></strong></article><i aria-hidden="true">→</i>
