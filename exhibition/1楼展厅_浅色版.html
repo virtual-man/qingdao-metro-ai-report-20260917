@@ -1,267 +1,76 @@
-<!doctype html><html lang="zh-CN"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="color-scheme" content="light"><title>1楼展厅汇报</title><style>:root{--text:#173f32;--muted:#506f61;--accent:#176347;--line:#bfdacf;--panel:rgba(249,253,251,.92);--soft:rgba(229,242,235,.94);--strong:#155843;--on-strong:#fff;--shadow:0 6px 25px #174b3308;--image-surface:#f6faf7;--nav:#ffffffed;--canvas:#f4f8fc;--bar:#2c9972;--focus:#2d8c70;--outer:#e5eeea}
+<!doctype html><html lang="zh-CN"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="color-scheme" content="light"><meta name="report-version" content="1.1-20260916"><title>1楼展厅汇报</title><style>:root{--text:#173f32;--muted:#506f61;--accent:#176347;--line:#bfdacf;--panel:rgba(249,253,251,.92);--soft:rgba(229,242,235,.94);--strong:#155843;--on-strong:#fff;--shadow:0 6px 25px #174b3308;--image-surface:#f6faf7;--nav:#ffffffed;--canvas:#f4f8fc;--bar:#2c9972;--focus:#2d8c70;--outer:#e5eeea}
 *{box-sizing:border-box}html,body{margin:0;width:100%;height:100%;overflow:hidden}body{font-family:"PingFang SC","Microsoft YaHei","Noto Sans CJK SC",Arial,sans-serif;color:var(--text);background:var(--outer);-webkit-font-smoothing:antialiased}button{font:inherit;cursor:pointer}button:focus-visible,a:focus-visible{outline:3px solid var(--focus);outline-offset:4px}button{color:inherit}.stage{position:absolute;width:1600px;height:900px;overflow:hidden;transform-origin:top left;background:var(--canvas);isolation:isolate}.stage:before{content:"";position:absolute;inset:0;background:url('assets/background.png') center/cover no-repeat;z-index:-2}.stage:after{content:"";position:absolute;inset:0;pointer-events:none;z-index:-1;background:linear-gradient(100deg,#ffffff22,#ffffff08)}.masthead{position:absolute;top:0;left:0;right:0;height:152px;background:var(--nav);border-bottom:1px solid var(--line);display:flex;align-items:center;gap:72px;padding:22px 64px}.brand{display:flex;align-items:center;gap:15px;flex:0 0 355px}.brand img{width:74px;height:78px;object-fit:contain}.brand strong{display:block;white-space:nowrap;font-size:31px;line-height:1.4;font-weight:750;letter-spacing:1px;color:var(--strong)}.brand small{display:block;font-size:17px;letter-spacing:.4px;font-weight:650;color:var(--accent)}.navigation{position:relative;flex:1;height:90px;display:flex;align-items:flex-start;margin-top:6px}.nav-track,.nav-fill{height:3px;position:absolute;left:16.666%;right:16.666%;top:22px;background:var(--line);border-radius:3px}.nav-fill{right:auto;width:0;background:var(--bar);transition:width .4s ease}.nav-item{flex:1;border:0;background:none;position:relative;display:flex;align-items:center;flex-direction:column;gap:9px;padding:0;font-size:21px;color:var(--muted);font-weight:550}.nav-dot{display:flex;align-items:center;justify-content:center;width:45px;height:45px;border:2px solid var(--line);border-radius:50%;background:var(--panel);font-size:23px;transition:.25s}.nav-item.current{color:var(--accent);font-weight:750}.nav-item.current .nav-dot{background:var(--strong);color:var(--on-strong);border-color:var(--strong);box-shadow:0 0 0 6px var(--soft)}.nav-item.complete .nav-dot{border-color:var(--bar);color:var(--accent);background:var(--soft)}main{position:absolute;top:180px;bottom:82px;left:64px;right:64px}.slide{display:none;width:100%;height:100%}.slide.active{display:block;animation:slide-in 350ms cubic-bezier(.22,.7,.24,1)}.slide>h1{font-size:40px;font-weight:700;line-height:48px;letter-spacing:.2px;margin:0 0 20px;display:flex;align-items:center;gap:23px;color:var(--text)}.slide>h1:before{content:attr(data-numeral);font-size:40px;color:var(--bar);padding-right:21px;border-right:2px solid var(--line);line-height:48px;font-weight:650}.slide h2,.slide h3,.slide p{margin:0}.panel{border:1px solid var(--line);border-radius:19px;background:var(--panel);box-shadow:var(--shadow)}.footer{position:absolute;left:64px;right:64px;bottom:22px;height:48px;display:flex;align-items:center;justify-content:space-between;border-top:1px solid var(--line);padding-top:13px;color:var(--muted);font-size:16px}.footer-left{display:flex;align-items:center;gap:16px}.floor-label{font-weight:600;letter-spacing:.8px}.footer-controls{display:flex;align-items:center;gap:10px}.tool{height:37px;padding:0 14px;display:flex;align-items:center;justify-content:center;border:1px solid var(--line);border-radius:10px;background:var(--panel);font-size:16px;color:var(--text);transition:background .2s,color .2s}.tool:hover{background:var(--soft);color:var(--accent)}.tool:disabled{opacity:.35;cursor:default}.page-counter{min-width:63px;text-align:center;color:var(--accent);font-size:18px;font-variant-numeric:tabular-nums}.page-line{width:150px;height:4px;display:flex;gap:4px}.page-line i{height:4px;flex:1;background:var(--line);border-radius:2px;transition:background .25s}.page-line i.done{background:var(--bar)}.page-title{color:var(--muted);font-size:15px}.theme-icon{font-size:17px;margin-right:6px}.dark{--text:#e4f2f1;--muted:#a7c4c8;--accent:#68e8c7;--line:#2b505c;--panel:rgba(11,34,47,.94);--soft:rgba(16,59,68,.85);--strong:#103f48;--on-strong:#d5fff1;--shadow:0 9px 30px #0003;--image-surface:#091b29;--nav:rgba(5,21,34,.94);--canvas:#061420;--bar:#55debd;--focus:#88fce0;--outer:#020c14}.dark .stage:before{background:radial-gradient(ellipse at 76% 13%,#0c465350,transparent 53%),radial-gradient(ellipse at 5% 90%,#12455044,transparent 60%),linear-gradient(135deg,#081d2b,#06121d 70%)}.dark .stage:after{background-image:linear-gradient(#62cbd304 1px,transparent 1px),linear-gradient(90deg,#62cbd304 1px,transparent 1px);background-size:46px 46px;mask-image:linear-gradient(transparent,#000)}.dark .masthead{box-shadow:0 2px 25px #0003;border-bottom-color:#2b66755e}.dark .brand img{filter:grayscale(1) invert(1) brightness(1.7);mix-blend-mode:screen;opacity:.95}.dark .brand strong{color:#eafff7}.dark .brand small{color:#81cfc2}.dark .nav-track{background:#254753}.dark .nav-fill{box-shadow:0 0 12px #50dcbb77}.dark .nav-item.current .nav-dot{color:#03241f;background:var(--accent);border-color:var(--accent);box-shadow:0 0 0 6px #65e5c519,0 0 27px #55deb52e}.dark .nav-dot{background:#0b2533}.dark .panel,.dark .h9-architecture,.dark .h9-experience-card,.dark .h9-proposal{box-shadow:0 9px 25px #0002}.dark strong{letter-spacing:.1px}.dark .h1-network-map{background:#112b38!important}.dark .h1-network-map img{filter:brightness(.94)}.dark .h1m-card{box-shadow:0 6px 22px #0002}.dark .h9-layer-label{box-shadow:inset 0 0 24px #3ccdab07}.dark .h9-industry-outcome{background:linear-gradient(110deg,#123d46,#0b2638)}.dark .h1-results{background:linear-gradient(115deg,#103342,#0b2230)}
 @keyframes slide-in{from{opacity:0;transform:translateX(var(--enter,16px))}to{opacity:1;transform:translateX(0)}}@media(prefers-reduced-motion:reduce){*,*:before,*:after{animation:none!important;transition:none!important}}@media print{@page{size:1600px 900px;margin:0}html,body{height:auto;overflow:visible;background:#fff}.stage{position:static!important;transform:none!important;width:1600px;height:auto;overflow:visible}.masthead{position:fixed}.footer{display:none}main{position:static}.slide,.slide.active{display:block;position:relative;width:1472px;height:900px;margin:0 64px;padding-top:180px;break-after:page;animation:none}.stage:before{position:fixed}}
 
-.h1-overview-body{height:570px;display:grid;grid-template-rows:30px 74px minmax(0,1fr);gap:14px}.h1-mission{font-size:22px;line-height:30px;font-weight:600;text-align:center;color:var(--accent)}.h1-timeline{display:grid;grid-template-columns:240px 290px 290px 1fr;align-items:center;padding:12px 22px;gap:18px}.h1-timeline>div{display:flex;gap:14px;align-items:center;border-right:1px solid var(--line);height:42px}.h1-timeline b{font-size:34px;color:var(--accent)}.h1-timeline span{font-size:21px}.h1-timeline p{font-size:20px;line-height:1.5;color:var(--muted)}.h1-overview-columns{display:grid;grid-template-columns:1.12fr 1fr;gap:22px;min-height:0}.h1-overview-copy{display:flex;flex-direction:column;gap:13px;min-height:0}.h1-overview-copy>p{font-size:21px;line-height:1.65;text-align:justify}.h1-overview-copy strong{color:var(--accent);font-weight:700}.h1-factory-callout{padding:12px 14px;display:flex;gap:17px;flex:1;align-items:center;background:var(--soft)!important}.h1-factory-callout img{width:91px;height:120px;object-fit:contain;flex-shrink:0}.h1-factory-callout p{font-size:18px;line-height:1.6;text-align:justify}.h1-network-map{margin:0;min-height:0;padding:5px;overflow:hidden;display:flex;align-items:center;justify-content:center;background:var(--image-surface)!important}.h1-network-map img{width:100%;height:100%;object-fit:contain;border-radius:12px}.h1-effects-body{height:570px;display:grid;grid-template-rows:58px 227px 75px 168px;gap:14px}.h1-effects-lead{display:flex;align-items:center;justify-content:space-between;gap:26px}.h1-effects-lead h2{font-size:28px;line-height:1.4;color:var(--accent);font-weight:650}.h1-effects-lead p{font-size:21px;line-height:1.5;color:var(--muted)}.h1-effects-main{display:grid;grid-template-columns:370px 1fr;gap:22px}.h1-train{margin:0;overflow:hidden;display:flex;flex-direction:column;background:var(--strong)!important;border-color:var(--strong)!important}.h1-train img{width:100%;height:189px;object-fit:cover;object-position:center}.h1-train figcaption{height:36px;display:flex;align-items:center;justify-content:center;font-size:18px;color:var(--on-strong)}.h1-results{padding:18px 26px;display:flex;flex-direction:column;gap:15px}.h1-results>p{font-size:21px;line-height:1.5}.h1-results>p strong{color:var(--accent);font-size:27px}.h1-reliability{display:flex;align-items:baseline;gap:20px;font-size:21px;border-bottom:1px solid var(--line);padding-bottom:13px}.h1-reliability b{font-size:32px;color:var(--muted);font-weight:500}.h1-reliability strong{font-size:45px;color:var(--accent);line-height:1}.h1-savings{display:grid;grid-template-columns:1fr 1.15fr 1fr;gap:20px}.h1-savings>div{display:flex;align-items:baseline;justify-content:center;gap:9px}.h1-savings>div+div{border-left:1px solid var(--line)}.h1-savings span{font-size:20px}.h1-savings strong{font-size:31px;color:var(--accent);white-space:nowrap}.h1-next{padding:14px 24px;background:var(--soft)!important;display:flex;align-items:center}.h1-next p{font-size:21px;line-height:1.5}.h1-next strong{color:var(--accent)}.h1-screens{display:grid;grid-template-columns:repeat(5,1fr);gap:12px;min-height:0}.h1-screens figure{margin:0;overflow:hidden;border:1px solid var(--line);border-radius:15px;background:#071c2a}.h1-screens img{width:100%;height:100%;object-fit:contain}
-/* Body fragment for a 1600 x 900 shell. Parent places .slide in the 1472 x 638 content region. */
-.h1m-slide { color: var(--text); }
-.h1m-slide * { box-sizing: border-box; }
-.h1m-slide p, .h1m-slide h2, .h1m-slide h3, .h1m-slide h4, .h1m-slide dl, .h1m-slide dd, .h1m-slide figure { margin: 0; }
-.h1m-title { margin: 0 0 20px; font-size: 40px; line-height: 48px; font-weight: 750; letter-spacing: -.7px; }
-.h1m-grid { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); grid-template-rows: repeat(2, 277px); gap: 16px; height: 570px; }
-.h1m-card { min-width: 0; border: 1px solid var(--line); border-radius: 17px; padding: 14px 15px; background: var(--panel); box-shadow: var(--shadow); overflow: hidden; font-size: 17px; line-height: 1.3; }
-.h1m-card-head { display: flex; align-items: flex-start; gap: 10px; min-height: 48px; padding-bottom: 8px; border-bottom: 1px solid var(--line); }
-.h1m-number { flex: 0 0 29px; height: 29px; display: grid; place-items: center; border-radius: 8px; font-size: 19px; font-weight: 750; background: var(--soft); color: var(--accent); margin-top: 1px; }
-.h1m-head-text { min-width: 0; }
-.h1m-card h2 { font-size: 21px; line-height: 27px; font-weight: 750; white-space: nowrap; color: var(--text); }
-.h1m-head-text > p { font-size: 17px; line-height: 23px; color: var(--muted); white-space: nowrap; }
-.h1m-note { margin-left: auto !important; padding-left: 3px; flex-shrink: 0; font-size: 14px; line-height: 20px; color: var(--accent); text-align: right; }
-.h1m-large { display: flex; align-items: baseline; gap: 7px; }
-.h1m-large strong { font-size: 34px; line-height: 39px; letter-spacing: -.8px; color: var(--accent); font-weight: 760; }
-.h1m-large span, .h1m-stats-grid dd span, .h1m-agent-split dd span { font-size: 15px; color: var(--muted); }
-.h1m-stat { font-size: 29px; line-height: 31px; color: var(--accent); margin-right: 7px; }
-.h1m-card strong { font-weight: 750; }
-.h1m-scene-body { display: grid; grid-template-columns: 1fr 177px; gap: 10px; padding-top: 11px; }
-.h1m-rule-label { margin-top: 9px !important; padding-top: 8px; border-top: 1px solid var(--line); }
-.h1m-criteria { display: flex; flex-wrap: wrap; gap: 5px 13px; margin-top: 7px; color: var(--accent); }
-.h1m-criteria span { white-space: nowrap; }
-.h1m-scene-figure { display: flex; flex-direction: column; align-items: center; gap: 2px; }
-.h1m-scene-figure img { width: 137px; height: 137px; object-fit: contain; }
-.h1m-figure-labels { display: flex; justify-content: space-between; width: 100%; font-size: 14px; line-height: 18px; color: var(--muted); }
-.h1m-data-body { display: grid; grid-template-columns: 157px 1fr; gap: 13px; padding-top: 10px; }
-.h1m-data-foundation { border-right: 1px solid var(--line); padding-right: 10px; display: flex; flex-direction: column; gap: 5px; }
-.h1m-data-foundation > div > p:first-child { font-size: 16px; }
-.h1m-data-foundation > div:first-child > p:last-child { height: 34px; }
-.h1m-emphasis { color: var(--accent); font-size: 17px; font-weight: 650; line-height: 24px; }
-.h1m-stats-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 5px 9px; }
-.h1m-stats-grid dt { color: var(--muted); font-size: 15px; line-height: 19px; white-space: nowrap; }
-.h1m-stats-grid dd { white-space: nowrap; display: flex; align-items: baseline; gap: 3px; }
-.h1m-stats-grid dd strong { font-size: 29px; line-height: 31px; color: var(--accent); letter-spacing: -.7px; }
-.h1m-data-goal { border-top: 1px solid var(--line); padding-top: 6px; margin-top: 7px !important; font-size: 15px; line-height: 20px; color: var(--muted); }
-.h1m-data-goal strong { font-size: 29px; line-height: 30px; color: var(--accent); margin-right: 6px; }
-.h1m-data-goal span { color: var(--text); font-size: 16px; }
-.h1m-model-body { display: grid; grid-template-columns: 184px 1fr; gap: 10px; padding-top: 10px; }
-.h1m-model-copy { display: flex; flex-direction: column; gap: 8px; font-size: 16px; line-height: 22px; }
-.h1m-model-copy strong { color: var(--accent); }
-.h1m-model-knowledge { font-size: 15px; white-space: nowrap; letter-spacing: -.3px; }
-.h1m-results { min-width: 0; border-left: 1px solid var(--line); padding-left: 11px; }
-.h1m-results > h3 { font-size: 15px; font-weight: 600; color: var(--muted); margin-bottom: 7px; line-height: 20px; }
-.h1m-results strong { color: var(--accent); }
-.h1m-model-results ul { margin: 0; padding-left: 16px; display: flex; flex-direction: column; gap: 6px; font-size: 16px; line-height: 21px; }
-.h1m-model-results li::marker { color: var(--accent); }
-.h1m-model-results strong { font-size: 18px; }
-.h1m-agent-body { display: grid; grid-template-columns: 177px 1fr; gap: 10px; padding-top: 9px; }
-.h1m-agent-counts > p:first-child { font-size: 16px; line-height: 20px; }
-.h1m-agent-counts > p:first-child br { display: none; }
-.h1m-agent-counts > p:first-child strong { color: var(--accent); }
-.h1m-plan-label { margin-top: 8px !important; font-size: 16px; line-height: 20px; }
-.h1m-agent-counts .h1m-large strong { font-size: 32px; line-height: 36px; }
-.h1m-agent-split { display: grid; grid-template-columns: .85fr 1.15fr; gap: 7px; border-top: 1px solid var(--line); padding-top: 7px; margin-top: 7px !important; }
-.h1m-agent-split > div + div { padding-left: 8px; border-left: 1px solid var(--line); }
-.h1m-agent-split dd { display: flex; align-items: baseline; gap: 2px; white-space: nowrap; }
-.h1m-agent-split dd strong { font-size: 28px; color: var(--accent); line-height: 31px; letter-spacing: -.7px; }
-.h1m-agent-split dt { font-size: 15px; color: var(--muted); line-height: 22px; white-space: nowrap; }
-.h1m-agent-results > h3 { margin-bottom: 3px; }
-.h1m-agent-results h4, .h1m-robot-results h4 { font-size: 17px; font-weight: 700; line-height: 22px; margin-bottom: 4px; }
-.h1m-agent-effect { display: flex; gap: 8px; align-items: center; }
-.h1m-agent-effect img { width: 38px; height: 58px; object-fit: contain; }
-.h1m-agent-effect p, .h1m-audit-effect p { font-size: 16px; line-height: 23px; white-space: nowrap; }
-.h1m-agent-effect p strong, .h1m-audit-effect p strong { font-size: 19px; margin: 0 2px; }
-.h1m-audit-effect { padding-top: 4px; margin-top: 4px; border-top: 1px solid var(--line); }
-.h1m-audit-effect h4 { margin-bottom: 0; }
-.h1m-embodied-body { display: grid; grid-template-columns: 203px 1fr; gap: 10px; padding-top: 10px; }
-.h1m-embodied-copy > p { font-size: 16px; line-height: 23px; margin-bottom: 8px; }
-.h1m-embodied-copy strong { color: var(--accent); font-size: 18px; }
-.h1m-training { display: flex; gap: 0; justify-content: space-between; padding-top: 8px; border-top: 1px solid var(--line); color: var(--accent); font-size: 15px; line-height: 20px; }
-.h1m-training > span { flex: 1; text-align: center; }
-.h1m-training > span + span { border-left: 1px solid var(--line); }
-.h1m-robot-detail { display: flex; align-items: center; gap: 7px; margin-bottom: 10px; }
-.h1m-robot-detail img { width: 58px; height: 64px; object-fit: cover; border-radius: 5px; }
-.h1m-robot-detail h4 { font-size: 15px; white-space: nowrap; }
-.h1m-robot-detail p { font-size: 15px; line-height: 21px; white-space: nowrap; }
-.h1m-robot-results > p { font-size: 15px; line-height: 26px; white-space: nowrap; }
-.h1m-robot-results > p strong { font-size: 22px; margin-left: 2px; }
-.h1m-factory .h1m-card-head { padding-bottom: 11px; }
-.h1m-factory-body { padding-top: 13px; text-align: center; font-size: 17px; line-height: 26px; }
-.h1m-factory-name { font-size: 19px; font-weight: 700; color: var(--accent); white-space: nowrap; }
-.h1m-factory-body > p + p { color: var(--muted); }
-.h1m-flow { margin-top: 10px; background: var(--soft); border-radius: 10px; padding: 7px 12px 9px; }
-.h1m-flow h3 { font-size: 15px; color: var(--muted); font-weight: 500; line-height: 20px; margin-bottom: 5px; }
-.h1m-flow ol { list-style: none; padding: 0; margin: 0; display: grid; grid-template-columns: repeat(4, 1fr); }
-.h1m-flow li { position: relative; display: flex; flex-direction: column; align-items: center; gap: 2px; font-size: 16px; line-height: 18px; color: var(--accent); }
-.h1m-flow li + li::before { content: '→'; position: absolute; left: -7px; top: 12px; color: var(--muted); font-size: 20px; }
-.h1m-flow svg { width: 29px; height: 29px; fill: none; stroke: currentColor; stroke-width: 1.8; stroke-linecap: round; stroke-linejoin: round; }
+.zoomable{cursor:zoom-in}.zoomable:focus-visible{outline:3px solid var(--focus);outline-offset:3px}#image-dialog{position:fixed;inset:0;max-width:96vw;max-height:96vh;width:fit-content;height:fit-content;margin:auto;padding:36px 12px 12px;border:1px solid var(--line);border-radius:18px;background:var(--panel);color:var(--text);box-shadow:0 20px 100px #0009}#image-dialog::backdrop{background:#03121cd9;backdrop-filter:blur(7px)}#large-image{display:block;max-width:90vw;max-height:calc(92vh - 50px);width:auto;height:auto;object-fit:contain;border-radius:8px}#close-image{position:absolute;top:4px;right:7px;border:0;border-radius:7px;background:transparent;color:var(--text);font-size:28px;line-height:30px;width:32px;height:30px}#close-image:hover{background:var(--soft)}
+
+/* New 1F source; fixed 1472 × 638 slide area, 570px body. */
+[class^="h1v-"],[class*=" h1v-"]{box-sizing:border-box}.h1v-overview figure,.h1v-measures figure,.h1v-effects figure,.h1v-measures ol,.h1v-measures h4{margin:0}.h1v-panel,.h1v-card{border:1px solid var(--line);border-radius:17px;background:var(--panel);box-shadow:var(--shadow)}.h1v-overview strong,.h1v-measures strong,.h1v-effects strong{color:var(--accent);font-weight:750}.h1v-overview-body{height:570px;display:grid;grid-template-rows:54px 64px 428px;gap:12px}.h1v-mission{display:flex;justify-content:center;align-items:center;flex-wrap:wrap;column-gap:24px;font-size:23px;line-height:28px;font-weight:650;color:var(--accent);text-align:center}.h1v-mission span{white-space:nowrap}.h1v-timeline{display:grid;grid-template-columns:200px 277px 277px 1fr;gap:22px;padding:9px 22px;align-items:center}.h1v-timeline>div{display:flex;gap:15px;align-items:center;border-right:1px solid var(--line);height:40px}.h1v-timeline b{font-size:34px;color:var(--accent);font-weight:730}.h1v-timeline span{font-size:20px;white-space:nowrap}.h1v-timeline p{font-size:20px;line-height:28px;color:var(--muted)}.h1v-overview-columns{display:grid;grid-template-columns:1.27fr 1fr;gap:20px;min-height:0}.h1v-overview-copy{display:grid;grid-template-rows:minmax(0,1fr) 151px;gap:12px;min-height:0}.h1v-overview-facts{display:flex;flex-direction:column;justify-content:space-between;gap:9px;padding:0 3px;font-size:20px;line-height:29px;text-align:justify}.h1v-factory-intro{display:flex;align-items:center;gap:17px;padding:13px 15px;background:var(--soft)}.h1v-factory-intro img{width:90px;height:118px;object-fit:contain;flex-shrink:0}.h1v-factory-intro p{font-size:19px;line-height:27px;text-align:justify}.h1v-network-map{min-width:0;min-height:0;display:flex;align-items:center;justify-content:center;padding:5px;background:#f7faf8;overflow:hidden}.h1v-network-map img{display:block;width:100%;height:100%;object-fit:contain;border-radius:12px}
+.h1v-measures-grid{height:570px;display:grid;grid-template-columns:repeat(3,minmax(0,1fr));grid-template-rows:repeat(2,277px);gap:16px}.h1v-card{padding:12px 14px;min-width:0;min-height:0;font-size:16px;line-height:22px}.h1v-card-head{display:flex;gap:10px;align-items:flex-start;height:53px;border-bottom:1px solid var(--line);padding-bottom:8px}.h1v-number{display:grid;place-items:center;width:29px;height:29px;flex:0 0 29px;border-radius:9px;background:var(--soft);color:var(--accent);font-size:20px;line-height:29px}.h1v-card h2{font-size:20px;line-height:24px;white-space:nowrap;font-weight:750}.h1v-card h2 span{display:block;font-size:16px;line-height:21px;color:var(--muted);font-weight:550}.h1v-card-body{height:199px;display:grid;grid-template-columns:minmax(0,1.06fr) minmax(0,1fr);gap:12px;padding-top:9px}.h1v-copy-list{display:flex;flex-direction:column;gap:7px}.h1v-copy-list p{position:relative;padding-left:10px}.h1v-copy-list p:before{content:"";width:4px;height:4px;background:var(--accent);position:absolute;left:0;top:9px;border-radius:1px}.h1v-scene-body{grid-template-columns:minmax(0,1fr) 192px}.h1v-scene-picture{display:flex;flex-direction:column;align-items:center;justify-content:center;gap:2px}.h1v-scene-picture img{display:block;width:155px;height:155px;object-fit:contain}.h1v-picture-labels{display:flex;justify-content:space-between;width:100%;font-size:14px;line-height:17px;color:var(--muted)}.h1v-data-stats{display:flex;flex-direction:column;justify-content:space-between;border-left:1px solid var(--line);padding-left:12px}.h1v-data-stats p{display:flex;align-items:baseline;justify-content:space-between;gap:5px;flex-wrap:wrap;padding:3px 0;border-bottom:1px solid var(--line)}.h1v-data-stats p:last-child{border-bottom:0}.h1v-data-stats strong{font-size:26px;line-height:30px;letter-spacing:-.5px;white-space:nowrap}.h1v-data-stats span{font-size:14px;line-height:21px;white-space:nowrap}.h1v-results{border-left:1px solid var(--line);padding-left:11px;min-width:0}.h1v-results h3{font-size:14px;line-height:20px;color:var(--muted);font-weight:550;margin-bottom:7px}.h1v-model-results{gap:17px;font-size:17px;line-height:24px}.h1v-model-results strong{font-size:23px;line-height:26px}.h1v-agent-results h3{margin-bottom:3px}.h1v-agent-results h4{font-size:16px;line-height:21px;color:var(--accent);font-weight:700}.h1v-site-effect>p{font-size:15px;line-height:20px;margin-top:2px}.h1v-device-effect{display:flex;align-items:center;gap:7px;border-top:1px solid var(--line);margin-top:7px;padding-top:6px}.h1v-device-effect img{width:33px;height:53px;object-fit:contain;flex-shrink:0}.h1v-device-effect p{font-size:15px;line-height:21px;white-space:nowrap}.h1v-embodied .h1v-card-body{grid-template-columns:minmax(0,1.1fr) minmax(0,1fr);gap:10px}.h1v-embodied .h1v-copy-list{font-size:15.5px;line-height:21px;gap:6px}.h1v-robot-results{padding-left:10px}.h1v-robot-results h3{margin-bottom:3px}.h1v-robot-results video{display:block;width:100%;height:91px;border-radius:7px;object-fit:contain;background:#061c26}.h1v-robot-caption{font-size:14px;line-height:18px;text-align:center;margin-top:5px!important;margin-bottom:2px!important}.h1v-robot-metric{font-size:13.5px;line-height:19px;text-align:center;white-space:nowrap}.h1v-robot-metric strong{font-size:16px;margin-left:3px}.h1v-factory-body{text-align:center;font-size:16px;line-height:25px;padding-top:12px}.h1v-factory-name{font-size:18px;line-height:26px}.h1v-factory-body>div>p:last-child{font-size:15px;color:var(--muted)}.h1v-flow{margin-top:13px;display:flex;align-items:center;gap:12px;background:var(--soft);border-radius:12px;padding:10px 13px}.h1v-flow h3{flex:0 0 56px;font-size:18px;line-height:25px;color:var(--accent)}.h1v-flow ol{list-style:none;padding:0;flex:1;display:grid;grid-template-columns:repeat(4,1fr);gap:10px}.h1v-flow li{position:relative;display:flex;flex-direction:column;align-items:center;gap:3px;color:var(--accent);font-size:15px;line-height:18px}.h1v-flow img{width:28px;height:30px;object-fit:contain}.h1v-flow li+li:before{content:'→';position:absolute;left:-11px;top:9px;color:var(--muted);font-size:18px}
+.h1v-effects-body{height:570px;display:grid;grid-template-rows:58px 112px 376px;gap:12px}.h1v-effects-lead{display:flex;flex-direction:column;justify-content:center;align-items:center;gap:4px;text-align:center}.h1v-effects-lead h2{font-size:28px;line-height:32px;font-weight:700;color:var(--accent)}.h1v-effects-lead p{font-size:21px;line-height:25px;color:var(--muted)}.h1v-effects-metrics{display:grid;grid-template-columns:.9fr .98fr 1.2fr 1.9fr;gap:12px;min-height:0}.h1v-effects-metrics>p{padding:12px 16px;display:flex;flex-wrap:wrap;align-content:center;align-items:baseline;font-size:20px;line-height:28px}.h1v-effects-metrics>p:not(.h1v-reliability){display:block}.h1v-effects-metrics strong{font-size:23px;line-height:29px}.h1v-effects-metrics .h1v-reliability{flex-direction:column;flex-wrap:nowrap;justify-content:center;align-items:flex-start;line-height:25px}.h1v-reliability strong{font-size:30px;line-height:33px}.h1v-effects-metrics>.h1v-outlook{font-size:19px;line-height:28px;background:var(--soft)}.h1v-outlook strong{font-size:21px;line-height:28px}.h1v-effects-media{display:grid;grid-template-columns:540px minmax(0,1fr);gap:16px;min-height:0}.h1v-effects-left{display:grid;grid-template-rows:157px 207px;gap:12px;min-height:0}.h1v-small-media{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px;min-height:0}.h1v-media-tile{display:flex;flex-direction:column;min-height:0;overflow:hidden;border-radius:12px;border:1px solid var(--line);background:#071c28}.h1v-media-tile img,.h1v-media-tile video{display:block;width:100%;min-height:0;flex:1;object-fit:contain}.h1v-small-media img{object-fit:cover}.h1v-media-tile figcaption{flex:0 0 auto;padding:5px 9px;font-size:16px;line-height:23px;text-align:center;color:var(--on-strong);background:var(--strong)}.h1v-recognition img{object-fit:cover;object-position:50% 58%;height:153px}.h1v-recognition figcaption{padding:5px 8px;font-size:15px;line-height:21px;white-space:nowrap}.h1v-maintenance figcaption{font-size:20px;line-height:28px;font-weight:650}.h1v-maintenance video{object-fit:contain}.dark .h1v-network-map{background:#112b38}.dark .h1v-flow img{filter:brightness(1.7) saturate(.65)}
 </style></head>
-<body class="light" data-floor="1楼" data-alternate="1楼展厅_深色科技版.html"><div class="stage"><header class="masthead"><div class="brand"><img src="assets/logo.png" alt="青岛地铁标志"><div><strong>青岛地铁集团</strong><small>QINGDAO METRO</small></div></div><nav class="navigation" aria-label="汇报章节"><div class="nav-track"></div><div class="nav-fill"></div><button class="nav-item" type="button" aria-label="跳转到概况与发展"><span class="nav-dot">一</span><span>概况与发展</span></button><button class="nav-item" type="button" aria-label="跳转到主要举措"><span class="nav-dot">二</span><span>主要举措</span></button><button class="nav-item" type="button" aria-label="跳转到总体成效"><span class="nav-dot">三</span><span>总体成效</span></button></nav></header><main><section class="slide h1-overview" data-title="集团概况和人工智能发展情况" id="slide-1" role="group" aria-label="1 / 3">
-<h1 data-numeral="一">集团概况和人工智能发展情况</h1>
-<div class="h1-overview-body">
-<p class="h1-mission" data-source="16">坚守“为人民建地铁、为城市建地铁”初心使命，推进“轨道交通+低空经济”双主业融合发展</p>
-<div class="h1-timeline panel"><div><b>1987</b><span>启动筹建</span></div><div><b>2010</b><span>首条线路开工</span></div><div><b>2012</b><span>组建地铁集团</span></div><p data-source="15">现承担市轨道交通、低空经济发展职能</p></div>
-<div class="h1-overview-columns">
-<div class="h1-overview-copy">
-<p class="h1-network-copy" data-source="18">获批线路<strong>13条、506公里</strong>，位列<strong>全国第11</strong>；运营线路<strong>8条、352公里</strong>，对主要交通枢纽、商圈、医院、景区景点全覆盖，日均客流<strong>150万人次</strong>，公共交通分担率<strong>45%</strong>；在建线路<strong>8条、154公里</strong>，将于“十五五”期间全部开通</p>
-<p class="h1-ai-copy">聚焦建造、运行、运维、企管核心场景，制定《“人工智能+”三年行动方案（2025-2027）》，<strong>2026年力争AI覆盖70%</strong>的业务场景，<strong>2027年达到90%</strong>，全力推动人工智能科技创新、赋能应用和产业发展</p>
-<div class="h1-factory-callout panel"><img src="assets/hall1/image3.png" alt="“人工智能+”三年行动方案封面"><p data-source="24">已创建<strong>“一平台两中心四车间”人工智能工厂</strong>（人工智能平台，场景、应用中心，数据、模型、智能体、具身智能车间），已形成高质量数据集、大模型、智能体、具身智能装备等一批具备竞争力的产品，成功打造城市轨道交通人工智能示范线，应用落地走在了行业前列</p></div>
+<body class="light" data-floor="1楼" data-alternate="1楼展厅_深色科技版.html"><div class="stage"><header class="masthead"><div class="brand"><img src="assets/logo.png" alt="青岛地铁标志"><div><strong>青岛地铁集团</strong><small>QINGDAO METRO</small></div></div><nav class="navigation" aria-label="汇报章节"><div class="nav-track"></div><div class="nav-fill"></div><button class="nav-item" type="button" aria-label="跳转到概况与发展"><span class="nav-dot">一</span><span>概况与发展</span></button><button class="nav-item" type="button" aria-label="跳转到主要举措"><span class="nav-dot">二</span><span>主要举措</span></button><button class="nav-item" type="button" aria-label="跳转到总体成效"><span class="nav-dot">三</span><span>总体成效</span></button></nav></header><main><section class="slide h1v-overview" data-title="集团概况和人工智能发展情况" id="slide-1" role="group" aria-label="1 / 3">
+<h1 data-source="slide1:shape4" data-numeral="一">集团概况和人工智能发展情况</h1>
+<div class="h1v-overview-body">
+<div class="h1v-mission" data-source="slide1:shape16"><span>坚守“为人民建地铁、为城市建地铁”初心使命</span><span>推进“轨道交通+低空经济”双主业融合发展</span></div>
+<div class="h1v-timeline h1v-panel"><div><b data-source="slide1:shape75">1987</b><span data-source="slide1:shape46">筹建</span></div><div><b data-source="slide1:shape55">2010</b><span data-source="slide1:shape56">首条线路开工</span></div><div><b data-source="slide1:shape49">2012</b><span data-source="slide1:shape50">组建地铁集团</span></div><p data-source="slide1:shape20">现承担市轨道交通、低空经济发展职能</p></div>
+<div class="h1v-overview-columns">
+<div class="h1v-overview-copy">
+<div class="h1v-overview-facts"><p data-source="slide1:shape52:p0">获批线路<strong>13条、506公里</strong>，位列<strong>全国第11位</strong>；运营线路<strong>8条（段）、352公里</strong>，对城市主要交通枢纽、商圈、医院、景点全覆盖；在建线路<strong>8条（段）、154公里</strong>，将于“十五五”期间全部开通</p><p data-source="slide1:shape52:p1">集团资产<strong>3700亿元</strong>，职工<strong>1.5万人</strong>、委外及参建工人<strong>2.6万人</strong></p><p data-source="slide1:shape52:p2">聚焦建造、运行、运维、企管核心场景，制定《“人工智能+”三年行动方案（2025-2027）》，<strong>2026年力争AI覆盖70%</strong>的业务场景，<strong>2027年达到90%</strong></p></div>
+<div class="h1v-factory-intro h1v-panel"><img src="assets/hall1/image3.png" alt="“人工智能+”三年行动方案封面" data-source="slide1:shape63"><p data-source="slide1:shape61">首发城轨行业大模型，依托<strong>“一平台两中心四车间”人工智能工厂</strong>，创新实施<strong>“全程伴随、供需同研”</strong>研发模式，打造<strong>FDE研发团队（前线部署工程师）</strong>，<strong>400余个智能体上线批量生产</strong>，<strong>3类具身智能装备投用</strong></p></div>
 </div>
-<figure class="h1-network-map panel"><img src="assets/hall1/image4.jpeg" alt="青岛地铁在建、运营项目图"></figure>
+<figure class="h1v-network-map h1v-panel"><img src="assets/hall1/image2.jpeg" alt="青岛地铁线网图" data-source="slide1:shape59"></figure>
 </div>
 </div>
 </section>
-<section class="slide h1m-slide" data-title="主要举措" id="slide-2" role="group" aria-label="2 / 3">
-  <h1 class="h1m-title" data-numeral="二">主要举措</h1>
-  <div class="h1m-grid">
-    <article class="h1m-card h1m-scenes">
-      <header class="h1m-card-head">
-        <span class="h1m-number">1</span>
-        <div class="h1m-head-text"><h2>以高价值场景为牵引</h2><p>开展人工智能技术适配</p></div>
-        <p class="h1m-note">产业出题<br>科技答题</p>
-      </header>
-      <div class="h1m-scene-body">
-        <div class="h1m-scene-copy">
-          <p>梳理核心业务场景</p>
-          <p class="h1m-large"><strong>1700+</strong><span>项</span></p>
-          <p class="h1m-rule-label">筛选高价值场景</p>
-          <div class="h1m-criteria"><span>使用频次</span><span>用户数量</span><span>安全增效</span></div>
-        </div>
-        <figure class="h1m-scene-figure">
-          <div class="h1m-figure-labels"><span>乘客服务</span><span>调度指挥</span></div>
-          <img src="assets/hall1/image24.png" alt="高价值场景照片拼贴" loading="eager">
-          <figcaption class="h1m-figure-labels"><span>车辆检修</span><span>故障处置</span></figcaption>
-        </figure>
-      </div>
-    </article>
 
-    <article class="h1m-card h1m-data">
-      <header class="h1m-card-head">
-        <span class="h1m-number">2</span>
-        <div class="h1m-head-text"><h2>以数据治理为基础</h2><p>夯实人工智能发展底座</p></div>
-        <p class="h1m-note">数据作为<br>新型生产要素</p>
-      </header>
-      <div class="h1m-data-body">
-        <div class="h1m-data-foundation">
-          <div><p>沉淀行业数据</p><p><strong class="h1m-stat">PB</strong><span>级</span></p></div>
-          <div><p>首个通识数据集</p><p class="h1m-emphasis">行业首个</p></div>
-          <div><p>低空高质量数据集</p><p class="h1m-emphasis">国家试点</p></div>
-        </div>
-        <div class="h1m-data-numbers">
-          <dl class="h1m-stats-grid">
-            <div><dt>数据标准</dt><dd><strong>30</strong><span>项</span></dd></div>
-            <div><dt>数据资产登记</dt><dd><strong>27</strong><span>项</span></dd></div>
-            <div><dt>估值超</dt><dd><strong>4.6</strong><span>亿元</span></dd></div>
-            <div><dt>入表金额超</dt><dd><strong>5000</strong><span>万元</span></dd></div>
-          </dl>
-          <p class="h1m-data-goal">力争年内数据资产估值超<br><strong>10</strong><span>亿元</span></p>
-        </div>
-      </div>
-    </article>
-
-    <article class="h1m-card h1m-model">
-      <header class="h1m-card-head">
-        <span class="h1m-number">3</span>
-        <div class="h1m-head-text"><h2>以模型研发为核心</h2><p>提升人工智能能力水平</p></div>
-        <p class="h1m-note">省人工智能<br>双百工程</p>
-      </header>
-      <div class="h1m-model-body">
-        <div class="h1m-model-copy">
-          <p>2025年4月首发<br><strong>城轨行业大模型</strong></p>
-          <p>山东省“优秀创新级”<br>行业大模型</p>
-          <p>完成<strong>5</strong>轮版本优化</p>
-          <p class="h1m-model-knowledge">通识大模型+高质量知识库</p>
-        </div>
-        <div class="h1m-results h1m-model-results">
-          <h3>应用成效</h3>
-          <ul>
-            <li>大客流、乘客摔倒等突发事件响应时间缩短<strong>80%</strong></li>
-            <li>智慧安检违禁品检出率达到<strong>98%</strong></li>
-            <li>安全风险和隐患排查全流程闭环管理，巡查效率提升<strong>30%</strong></li>
-          </ul>
-        </div>
-      </div>
-    </article>
-
-    <article class="h1m-card h1m-agents">
-      <header class="h1m-card-head">
-        <span class="h1m-number">4</span>
-        <div class="h1m-head-text"><h2>以智能体应用为抓手</h2><p>推动人工智能落地应用</p></div>
-        <p class="h1m-note">行业级、<br>场景级智能体</p>
-      </header>
-      <div class="h1m-agent-body">
-        <div class="h1m-agent-counts">
-          <p>构建<strong>1+26</strong><br>智能体集群</p>
-          <p class="h1m-plan-label">规划智能体</p>
-          <p class="h1m-large"><strong>500+</strong><span>个</span></p>
-          <dl class="h1m-agent-split">
-            <div><dd><strong>80+</strong><span>个</span></dd><dt>已投用</dt></div>
-            <div><dd><strong>400+</strong><span>个</span></dd><dt>批量研发中</dt></div>
-          </dl>
-        </div>
-        <div class="h1m-results h1m-agent-results">
-          <h3>应用成效</h3>
-          <div class="h1m-agent-effect"><img src="assets/hall1/image25.png" alt="设备运维智能体形象" loading="eager"><div><h4>设备运维智能体</h4><p>替代<strong>60%</strong>人工作业</p><p>设备故障率降低<strong>51%</strong></p></div></div>
-          <div class="h1m-audit-effect"><h4>审计智能体</h4><p>审计流程压缩<strong>40%</strong></p><p>效率提升<strong>85%</strong></p></div>
-        </div>
-      </div>
-    </article>
-
-    <article class="h1m-card h1m-embodied">
-      <header class="h1m-card-head">
-        <span class="h1m-number">5</span>
-        <div class="h1m-head-text"><h2>以具身智能为延伸</h2><p>拓展人工智能应用边界</p></div>
-        <p class="h1m-note">省机器人产业<br>科技创新行动</p>
-      </header>
-      <div class="h1m-embodied-body">
-        <div class="h1m-embodied-copy">
-          <p>梳理<strong>14</strong>类具身智能场景</p>
-          <p>联合<strong>15</strong>家单位组建联创体</p>
-          <p>筹建“<strong>1+1+1</strong>”实景实训场</p>
-          <div class="h1m-training"><span>实训<br>车站</span><span>实训<br>车辆基地</span><span>实景综合<br>训练场</span></div>
-        </div>
-        <div class="h1m-results h1m-robot-results">
-          <h3>应用成效</h3>
-          <div class="h1m-robot-detail"><img src="assets/hall1/image19.png" alt="车辆巡检机器人" loading="eager"><div><h4>车辆巡检机器人</h4><p>自主巡检</p><p>实时回传结果</p></div></div>
-          <p>故障识别准确率超<strong>95%</strong></p>
-          <p>设备故障率降低约<strong>30%</strong></p>
-        </div>
-      </div>
-    </article>
-
-    <article class="h1m-card h1m-factory">
-      <header class="h1m-card-head">
-        <span class="h1m-number">6</span>
-        <div class="h1m-head-text"><h2>以人工智能工厂为载体</h2><p>赋能AI规模化研发及安全可控落地</p></div>
-      </header>
-      <div class="h1m-factory-body">
-        <p class="h1m-factory-name">“一平台两中心四车间”人工智能工厂</p>
-        <p>获批市级应用技术工程研究中心</p>
-        <div class="h1m-flow">
-          <h3>贯通全流程</h3>
-          <ol>
-            <li><svg viewbox="0 0 32 32" aria-hidden="true"><ellipse cx="16" cy="7" rx="10" ry="4"></ellipse><path d="M6 7v17c0 5 20 5 20 0V7M6 15c0 5 20 5 20 0M6 22c0 5 20 5 20 0"></path></svg><span>数据<br>采集</span></li>
-            <li><svg viewbox="0 0 32 32" aria-hidden="true"><circle cx="16" cy="16" r="5"></circle><circle cx="16" cy="4" r="2"></circle><circle cx="27" cy="10" r="2"></circle><circle cx="27" cy="23" r="2"></circle><circle cx="16" cy="29" r="2"></circle><circle cx="5" cy="23" r="2"></circle><circle cx="5" cy="10" r="2"></circle><path d="M16 6v5M25 11l-5 3M25 22l-5-3M16 27v-6M7 22l5-3M7 11l5 3"></path></svg><span>模型<br>训练</span></li>
-            <li><svg viewbox="0 0 32 32" aria-hidden="true"><rect x="7" y="3" width="19" height="27" rx="2"></rect><path d="M12 10h9M12 16h9M12 22h6"></path></svg><span>应用<br>开发</span></li>
-            <li><svg viewbox="0 0 32 32" aria-hidden="true"><rect x="6" y="10" width="20" height="17" rx="4"></rect><path d="M11 10V5h10v5M11 27v3M21 27v3M10 22h12"></path><circle cx="12" cy="16" r="1"></circle><circle cx="20" cy="16" r="1"></circle></svg><span>现场<br>落地</span></li>
-          </ol>
-        </div>
-      </div>
-    </article>
-  </div>
+<section class="slide h1v-measures" data-title="主要举措" id="slide-2" role="group" aria-label="2 / 3">
+<h1 data-source="slide2:shape4" data-numeral="二">主要举措</h1>
+<div class="h1v-measures-grid">
+<article class="h1v-card h1v-scenes">
+<header class="h1v-card-head"><b class="h1v-number" data-source="slide2:shape218">1</b><h2 data-source="slide2:shape93">以高价值场景为牵引，<span>开展人工智能技术适配</span></h2></header>
+<div class="h1v-card-body h1v-scene-body"><div class="h1v-copy-list" data-source="slide2:shape118"><p>坚持“产业出题、科技答题”</p><p>发动全员梳理核心业务场景<strong>1700余项</strong></p><p>从使用频次、用户数量、安全增效等维度筛选高价值场景优先落地</p></div><figure class="h1v-scene-picture"><div class="h1v-picture-labels"><span data-source="slide2:shape111">乘客服务</span><span data-source="slide2:shape112">调度指挥</span></div><img src="assets/hall1/image8.png" alt="高价值场景" data-source="slide2:shape115"><figcaption class="h1v-picture-labels"><span data-source="slide2:shape113">车辆检修</span><span data-source="slide2:shape114">故障处置</span></figcaption></figure></div>
+</article>
+<article class="h1v-card h1v-data">
+<header class="h1v-card-head"><b class="h1v-number" data-source="slide2:shape220">2</b><h2 data-source="slide2:shape219">以数据治理为基础，<span>夯实人工智能发展底座</span></h2></header>
+<div class="h1v-card-body"><div class="h1v-copy-list" data-source="slide2:shape132"><p>将数据作为新型生产要素</p><p>建立<strong>30项</strong>数据标准，搭建采集及治理平台</p><p>低成本建成<strong>行业首个</strong>通识数据集，低空高质量数据集入选国家数据局先行先试试点</p></div><div class="h1v-data-stats"><p data-source="slide2:shape97"><strong>27项</strong><span>数据资产登记</span></p><p data-source="slide2:shape103"><span>估值超</span><strong>4.6亿元</strong></p><p data-source="slide2:shape106,173"><span>入表金额超</span><strong>5000万元</strong></p><p data-source="slide2:shape174,175"><strong>10亿元</strong><span>力争年内估值</span></p></div></div>
+</article>
+<article class="h1v-card h1v-model">
+<header class="h1v-card-head"><b class="h1v-number" data-source="slide2:shape223">3</b><h2 data-source="slide2:shape222">以模型研发为核心，<span>提升人工智能能力水平</span></h2></header>
+<div class="h1v-card-body"><div class="h1v-copy-list" data-source="slide2:shape200"><p>紧扣省人工智能“双百工程”部署</p><p>首发<strong>城轨行业大模型</strong>（省“优秀创新级”行业大模型），正按<strong>“通识大模型＋高质量知识库”</strong>推进<strong>2.0版</strong>建设</p></div><div class="h1v-results"><h3 data-source="slide2:shape212">应用成效</h3><div class="h1v-copy-list h1v-model-results" data-source="slide2:shape272"><p>大客流、乘客摔倒等突发事件响应时间缩短<strong>80%</strong></p><p>智慧安检违禁品检出率达到<strong>98%</strong></p></div></div></div>
+</article>
+<article class="h1v-card h1v-agents">
+<header class="h1v-card-head"><b class="h1v-number" data-source="slide2:shape228">4</b><h2 data-source="slide2:shape227">以智能体应用为抓手，<span>推动人工智能落地应用</span></h2></header>
+<div class="h1v-card-body"><div class="h1v-copy-list" data-source="slide2:shape129"><p>聚焦我省培育行业级、场景级智能体工作部署</p><p>构建<strong>“1+26”</strong>智能体集群，规划<strong>500余个</strong>智能体，目前<strong>80余个已投用</strong>，<strong>400余个</strong>正处于批量研发阶段</p></div><div class="h1v-results h1v-agent-results"><h3 data-source="slide2:shape154">应用成效</h3><div class="h1v-site-effect"><h4 data-source="slide2:shape164">智慧工地智能体</h4><p data-source="slide2:shape2">安全风险和隐患排查全流程闭环管理，巡查效率提升<strong>30%</strong></p></div><div class="h1v-device-effect"><img src="assets/hall1/image9.png" alt="设备运维智能体" data-source="slide2:shape310"><div><h4 data-source="slide2:shape156">设备运维智能体</h4><p data-source="slide2:shape3">替代<strong>60%</strong>人工作业<br>设备故障率降低<strong>51%</strong></p></div></div></div></div>
+</article>
+<article class="h1v-card h1v-embodied">
+<header class="h1v-card-head"><b class="h1v-number" data-source="slide2:shape231">5</b><h2 data-source="slide2:shape230">以具身智能为延伸，<span>拓展人工智能应用边界</span></h2></header>
+<div class="h1v-card-body"><div class="h1v-copy-list" data-source="slide2:shape214"><p>系统对标省机器人产业科技创新行动计划相关要求</p><p>梳理巡检、客服等<strong>14类</strong>应用场景</p><p>联合山东大学、国华、云深处等<strong>15家单位</strong>组建联创体</p><p>筹建<strong>“1+1+1”</strong>实景实训场</p></div><div class="h1v-results h1v-robot-results"><h3 data-source="slide2:shape217">应用成效</h3><video data-source="slide2:shape9" src="assets/hall1/media1.mp4" poster="assets/hall1/media1-poster.jpg" autoplay muted loop playsinline controls preload="metadata" aria-label="列车巡检机器人"></video><p class="h1v-robot-caption" data-source="slide2:shape183">研发车辆、设备房、<br>轨行区机器人</p><p class="h1v-robot-metric" data-source="slide2:shape186,187">故障识别准确率超<strong>95%</strong></p><p class="h1v-robot-metric" data-source="slide2:shape188,189">设备故障率降低<strong>30%</strong></p></div></div>
+</article>
+<article class="h1v-card h1v-factory">
+<header class="h1v-card-head"><b class="h1v-number" data-source="slide2:shape233">6</b><h2 data-source="slide2:shape232">以人工智能工厂为载体，<span>赋能AI规模化落地</span></h2></header>
+<div class="h1v-factory-body"><div data-source="slide2:shape190"><p class="h1v-factory-name">建成<strong>“一平台两中心四车间”</strong>人工智能工厂</p><p>获批市级应用技术工程研究中心</p><p>加强安全验证，着力防范新技术衍生安全风险</p></div><div class="h1v-flow"><h3 data-source="slide2:shape194">贯通<br>全流程</h3><ol><li><img src="assets/hall1/image4.png" alt="" data-source="slide2:shape423"><span data-source="slide2:shape196">数据<br>采集</span></li><li><img src="assets/hall1/image5.png" alt="" data-source="slide2:shape428"><span data-source="slide2:shape201">模型<br>训练</span></li><li><img src="assets/hall1/image6.png" alt="" data-source="slide2:shape433"><span data-source="slide2:shape206">应用<br>开发</span></li><li><img src="assets/hall1/image7.png" alt="" data-source="slide2:shape438"><span data-source="slide2:shape211">现场<br>落地</span></li></ol></div></div>
+</article>
+</div>
 </section>
 
-<section class="slide h1-effects" data-title="总体成效" id="slide-3" role="group" aria-label="3 / 3">
-<h1 data-numeral="三">总体成效</h1>
-<div class="h1-effects-body">
-<div class="h1-effects-lead"><h2>打造6号线一期智慧城轨示范线</h2><p>运营更安全、设备更可靠、服务更精准、检修更高效</p></div>
-<div class="h1-effects-main"><figure class="h1-train panel"><img src="assets/hall1/image26.png" alt="青岛地铁6号线一期TACS首列车"><figcaption>青岛地铁6号线一期TACS首列车</figcaption></figure>
-<div class="h1-results panel"><p>16项行业关键指标中，<strong>12项</strong>实现“<strong>0触发</strong>”，<strong>13项</strong>指标达到或超越线网最优水平</p><div class="h1-reliability"><span>系统可靠性由</span><b>99.99%</b><span>提升至</span><strong>99.9996%</strong></div><div class="h1-savings"><div><span>综合降本</span><strong>超30%</strong></div><div><span>年节约成本</span><strong>约1亿元</strong></div><div><strong>3年</strong><span>可收回建设投资</span></div></div></div></div>
-<div class="h1-next panel"><p><strong>下一步</strong>，将通过三期线路建设、一二期智慧化改造全面推广应用，未来可实现全线网运营效率提升<strong>超40％</strong>、作业流程缩减<strong>超60％</strong>、成本降低<strong>超30％</strong></p></div>
-<div class="h1-screens"><figure><img src="assets/hall1/image27.png" alt="智慧城轨系统界面一"></figure><figure><img src="assets/hall1/image28.png" alt="智慧城轨系统界面二"></figure><figure><img src="assets/hall1/image29.png" alt="智慧城轨系统界面三"></figure><figure><img src="assets/hall1/image30.png" alt="智慧城轨系统界面四"></figure><figure><img src="assets/hall1/image31.png" alt="智慧城轨系统界面五"></figure></div>
+<section class="slide h1v-effects" data-title="总体成效" id="slide-3" role="group" aria-label="3 / 3">
+<h1 data-source="slide3:shape4" data-numeral="三">总体成效</h1>
+<div class="h1v-effects-body">
+<div class="h1v-effects-lead" data-source="slide3:shape16"><h2>打造青岛地铁6号线一期人工智能示范线</h2><p>运营更安全、设备更可靠、服务更精准、检修更高效</p></div>
+<div class="h1v-effects-metrics"><p class="h1v-panel" data-source="slide3:shape17"><strong>关键运营指标</strong>均达到或超越线网最优水平</p><p class="h1v-panel h1v-reliability" data-source="slide3:shape31">系统可靠性由<span>99.99%提升至</span><strong>99.9996%</strong></p><p class="h1v-panel" data-source="slide3:shape32">综合降本<strong>超30%</strong>，年节约成本<strong>约1亿元</strong>，<strong>3年</strong>可收回建设投资</p><p class="h1v-panel h1v-outlook" data-source="slide3:shape33">全线网推广应用后，运营效率提升<strong>超40％</strong>、作业流程缩减<strong>超60％</strong>、成本降低<strong>超30％</strong>，预计每年节省运营成本<strong>超10亿元</strong></p></div>
+<div class="h1v-effects-media"><div class="h1v-effects-left"><div class="h1v-small-media"><figure class="h1v-media-tile"><img src="assets/hall1/image11.jpeg" alt="全线路智慧车站" data-source="slide3:shape58"><figcaption data-source="slide3:shape59">全线路智慧车站</figcaption></figure><figure class="h1v-media-tile"><video data-source="slide3:shape2" src="assets/hall1/media3.mp4" poster="assets/hall1/media3-poster.jpg" autoplay muted loop playsinline controls preload="metadata" aria-label="6号线列车开放式驾驶室"></video><figcaption data-source="slide3:shape56">6号线列车开放式驾驶室</figcaption></figure></div><figure class="h1v-media-tile h1v-recognition"><img src="assets/hall1/image13.jpeg" alt="智慧城轨现场会" data-source="slide3:shape9"><figcaption data-source="slide3:shape57"><p>国家发改委：对我国城轨线路和装备智慧化发展起到很好借鉴作用</p><p>中城轨协会：是中国城市轨道交通历史上浓墨重彩的一笔</p></figcaption></figure></div><figure class="h1v-media-tile h1v-maintenance"><video data-source="slide3:shape60" src="assets/hall1/media2.mp4" poster="assets/hall1/media2-poster.jpg" autoplay muted loop playsinline controls preload="metadata" aria-label="全专业智慧运维"></video><figcaption data-source="slide3:shape61">全专业智慧运维</figcaption></figure></div>
 </div>
 </section>
 </main>
-<footer class="footer"><div class="footer-left"><span class="floor-label">1楼展厅</span><span class="page-title"></span></div><div class="footer-controls"><span class="page-line" aria-hidden="true"><i></i><i></i><i></i></span><button type="button" id="theme" class="tool" title="切换主题，保留当前页">深色主题</button><button type="button" id="timer" class="tool" aria-pressed="false" title="开始或暂停计时">计时 00:00</button><button type="button" id="full" class="tool">全屏</button><button type="button" id="previous" class="tool" aria-label="上一页">‹</button><span class="page-counter" aria-live="polite"></span><button type="button" id="next" class="tool" aria-label="下一页">›</button></div></footer></div><script>(()=>{
+<footer class="footer"><div class="footer-left"><span class="floor-label">1楼展厅</span><span class="page-title"></span></div><div class="footer-controls"><span class="page-line" aria-hidden="true"><i></i><i></i><i></i></span><button type="button" id="theme" class="tool" title="切换主题，保留当前页">深色主题</button><button type="button" id="timer" class="tool" aria-pressed="false" title="开始或暂停计时">计时 00:00</button><button type="button" id="full" class="tool">全屏</button><button type="button" id="previous" class="tool" aria-label="上一页">‹</button><span class="page-counter" aria-live="polite"></span><button type="button" id="next" class="tool" aria-label="下一页">›</button></div></footer></div><dialog id="image-dialog" aria-label="查看图片"><button type="button" id="close-image" aria-label="关闭图片">×</button><img id="large-image" alt=""></dialog><script>(()=>{
 'use strict';const stage=document.querySelector('.stage'),slides=[...document.querySelectorAll('.slide')],nav=[...document.querySelectorAll('.nav-item')],previous=document.querySelector('#previous'),next=document.querySelector('#next'),counter=document.querySelector('.page-counter'),bar=document.querySelector('.nav-fill'),marks=[...document.querySelectorAll('.page-line i')];let current=0,timerRunning=false,elapsed=0,started=0;
 function fit(){let s=Math.min(innerWidth/1600,innerHeight/900);stage.style.transform=`scale(${s})`;stage.style.left=`${(innerWidth-1600*s)/2}px`;stage.style.top=`${(innerHeight-900*s)/2}px`;}
 function go(n,update=true){n=Math.min(slides.length-1,Math.max(0,n));stage.style.setProperty('--enter',n<current?'-16px':'16px');current=n;slides.forEach((s,i)=>{s.classList.toggle('active',i===n);s.inert=i!==n;s.setAttribute('aria-hidden',i===n?'false':'true');s.querySelectorAll('video').forEach(v=>{if(i===n){v.muted=true;v.loop=true;v.play().catch(()=>{});}else v.pause();});});nav.forEach((b,i)=>{b.classList.toggle('current',i===n);b.classList.toggle('complete',i<n);if(i===n)b.setAttribute('aria-current','step');else b.removeAttribute('aria-current');});bar.style.width=`${(slides.length===1?0:n/(slides.length-1))*66.666}%`;marks.forEach((m,i)=>m.classList.toggle('done',i<=n));counter.textContent=`${n+1} / ${slides.length}`;document.querySelector('.page-title').textContent=slides[n].dataset.title;previous.disabled=n===0;next.disabled=n===slides.length-1;document.title=`${document.body.dataset.floor}展厅 · ${slides[n].dataset.title}`;if(update)history.replaceState(null,'',`#${n+1}`);}
-nav.forEach((b,i)=>b.addEventListener('click',()=>go(i)));previous.addEventListener('click',()=>go(current-1));next.addEventListener('click',()=>go(current+1));document.querySelector('#theme').addEventListener('click',()=>{const url=new URL(document.body.dataset.alternate,location.href);url.hash=String(current+1);location.href=url.href;});document.querySelector('#full').addEventListener('click',()=>{if(!document.fullscreenElement)document.documentElement.requestFullscreen?.().catch(()=>{});else document.exitFullscreen?.();});document.addEventListener('fullscreenchange',()=>{document.querySelector('#full').textContent=document.fullscreenElement?'退出全屏':'全屏';fit();});document.addEventListener('keydown',e=>{if(e.altKey||e.ctrlKey||e.metaKey||/INPUT|TEXTAREA/.test(e.target.tagName))return;if(['ArrowRight','ArrowDown','PageDown',' '].includes(e.key)){e.preventDefault();go(current+1);}else if(['ArrowLeft','ArrowUp','PageUp'].includes(e.key)){e.preventDefault();go(current-1);}else if(e.key==='Home'){e.preventDefault();go(0);}else if(e.key==='End'){e.preventDefault();go(slides.length-1);}else if(e.key.toLowerCase()==='f')document.querySelector('#full').click();});let touchX=0,touchY=0;stage.addEventListener('touchstart',e=>{touchX=e.touches[0].clientX;touchY=e.touches[0].clientY;},{passive:true});stage.addEventListener('touchend',e=>{const dx=e.changedTouches[0].clientX-touchX,dy=e.changedTouches[0].clientY-touchY;if(Math.abs(dx)>60&&Math.abs(dx)>Math.abs(dy)*1.5)go(current+(dx<0?1:-1));},{passive:true});document.querySelector('#timer').addEventListener('click',()=>{if(timerRunning)elapsed+=Date.now()-started;else started=Date.now();timerRunning=!timerRunning;document.querySelector('#timer').setAttribute('aria-pressed',String(timerRunning));tick();});function tick(){const secs=Math.floor((elapsed+(timerRunning?Date.now()-started:0))/1000);document.querySelector('#timer').textContent=`${timerRunning?'计时':'计时'} ${String(Math.floor(secs/60)).padStart(2,'0')}:${String(secs%60).padStart(2,'0')}`;}setInterval(tick,1000);window.addEventListener('resize',fit);window.addEventListener('hashchange',()=>go((Number(location.hash.slice(1))||1)-1,false));fit();go((Number(location.hash.slice(1))||1)-1,false);window.presentation={go,get current(){return current},count:slides.length};
+const imageDialog=document.querySelector('#image-dialog'),largeImage=document.querySelector('#large-image');let interruptedVideos=[];
+function openImage(im){largeImage.src=im.currentSrc||im.src;largeImage.alt=im.alt;interruptedVideos=[...slides[current].querySelectorAll('video')].filter(v=>!v.paused);interruptedVideos.forEach(v=>v.pause());imageDialog.showModal();}
+document.querySelector('#close-image').addEventListener('click',()=>imageDialog.close());imageDialog.addEventListener('click',e=>{if(e.target===imageDialog)imageDialog.close();});imageDialog.addEventListener('close',()=>{interruptedVideos.forEach(v=>{if(v.closest('.slide.active'))v.play().catch(()=>{});});interruptedVideos=[];});
+slides.forEach(s=>s.querySelectorAll('img').forEach(im=>{const enable=()=>{if(im.naturalWidth<300||im.naturalHeight<200||im.closest('.h9-enterprise-logo,.h1v-flow,.h1v-device-effect'))return;im.classList.add('zoomable');im.tabIndex=0;im.setAttribute('role','button');im.setAttribute('aria-label',im.alt?`查看图片：${im.alt}`:'查看图片');im.addEventListener('click',()=>openImage(im));im.addEventListener('keydown',e=>{if(e.key==='Enter'||e.key===' '){e.preventDefault();openImage(im);}});};if(im.complete)enable();else im.addEventListener('load',enable,{once:true});}));
+nav.forEach((b,i)=>b.addEventListener('click',()=>go(i)));previous.addEventListener('click',()=>go(current-1));next.addEventListener('click',()=>go(current+1));document.querySelector('#theme').addEventListener('click',()=>{const url=new URL(document.body.dataset.alternate,location.href);url.hash=String(current+1);location.href=url.href;});document.querySelector('#full').addEventListener('click',()=>{if(!document.fullscreenElement)document.documentElement.requestFullscreen?.().catch(()=>{});else document.exitFullscreen?.();});document.addEventListener('fullscreenchange',()=>{document.querySelector('#full').textContent=document.fullscreenElement?'退出全屏':'全屏';fit();});document.addEventListener('keydown',e=>{if(imageDialog.open||e.altKey||e.ctrlKey||e.metaKey||/INPUT|TEXTAREA|VIDEO/.test(e.target.tagName)||((e.key===' '||e.key==='Enter')&&e.target.closest('button,[role=button]')))return;if(['ArrowRight','ArrowDown','PageDown',' '].includes(e.key)){e.preventDefault();go(current+1);}else if(['ArrowLeft','ArrowUp','PageUp'].includes(e.key)){e.preventDefault();go(current-1);}else if(e.key==='Home'){e.preventDefault();go(0);}else if(e.key==='End'){e.preventDefault();go(slides.length-1);}else if(e.key.toLowerCase()==='f')document.querySelector('#full').click();});let touchX=0,touchY=0;stage.addEventListener('touchstart',e=>{if(e.target.closest('video')){touchX=NaN;return;}touchX=e.touches[0].clientX;touchY=e.touches[0].clientY;},{passive:true});stage.addEventListener('touchend',e=>{const dx=e.changedTouches[0].clientX-touchX,dy=e.changedTouches[0].clientY-touchY;if(Math.abs(dx)>60&&Math.abs(dx)>Math.abs(dy)*1.5)go(current+(dx<0?1:-1));},{passive:true});document.querySelector('#timer').addEventListener('click',()=>{if(timerRunning)elapsed+=Date.now()-started;else started=Date.now();timerRunning=!timerRunning;document.querySelector('#timer').setAttribute('aria-pressed',String(timerRunning));tick();});function tick(){const secs=Math.floor((elapsed+(timerRunning?Date.now()-started:0))/1000);document.querySelector('#timer').textContent=`${timerRunning?'计时':'计时'} ${String(Math.floor(secs/60)).padStart(2,'0')}:${String(secs%60).padStart(2,'0')}`;}setInterval(tick,1000);window.addEventListener('resize',fit);window.addEventListener('hashchange',()=>go((Number(location.hash.slice(1))||1)-1,false));fit();go((Number(location.hash.slice(1))||1)-1,false);window.presentation={go,get current(){return current},count:slides.length};
 })();
 </script></body></html>
